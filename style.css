@@ -57,6 +57,10 @@ canvas {
     color: white;
 }
 
+#brushSize {
+    width: 100px;
+}
+
 .commands button:hover {
     transform: scale(1.1);
 }

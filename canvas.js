@@ -32,7 +32,7 @@ function stop() {
 
 function draw(event) {
   ctx.beginPath();
-  ctx.lineWidth = 5;
+  ctx.lineWidth = currentSize;
   ctx.lineCap = "round";
   ctx.strokeStyle = currentColor;
   ctx.moveTo(coord.x, coord.y);
@@ -45,7 +45,10 @@ function draw(event) {
 // Find buttons and color input
 const clearCanvas = document.getElementById("clearCanvas")
 const colorPicker = document.getElementById("colorPicker")
+const brushSize = document.getElementById("brushSize")
+const saveCanvas = document.getElementById("saveCanvas")
 let currentColor = "#FF6D60"
+let currentSize = 5
 
 
 colorPicker.addEventListener("input", function(){
@@ -54,6 +57,18 @@ colorPicker.addEventListener("input", function(){
 
   // Change buttons color
   clearCanvas.style.background = currentColor
+  saveCanvas.style.background = currentColor
+})
+
+brushSize.addEventListener("input", function(){
+  currentSize = this.value
+})
+
+saveCanvas.addEventListener("click", function(){
+  const link = document.createElement("a")
+  link.download = "canvas.png"
+  link.href = canvas.toDataURL()
+  link.click()
 })
 
 
