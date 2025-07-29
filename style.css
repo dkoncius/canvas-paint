@@ -60,3 +60,12 @@ canvas {
 .commands button:hover {
     transform: scale(1.1);
 }
+
+#brushSize {
+    width: 100px;
+}
+
+#brushSizeValue {
+    color: white;
+    font-weight: bold;
+}
